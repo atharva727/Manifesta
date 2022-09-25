@@ -1,0 +1,68 @@
+{% extends 'includes/base.html' %}
+{%load static %}
+
+{% block title %}Manifesta | Home{% endblock %}
+
+{% block content %}
+<div class="container col-6">
+    <div>
+        <div class="signup-form">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="number" name="vendor" value="{{vendorid}}"  hidden required id="id_vendor">
+                <h2 class="text-center font-weight-bold">Order Now</h2>
+                <hr>
+                <div class="form-group">
+                    <div><span class="text-danger">{{form.orderDeliveryTime.errors}}</span></div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-paper-plane"></i>
+                            </span>
+                        </div>
+                        {{form.orderDeliveryTime}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div><span class="text-danger">{{form.address.errors}}</span></div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <span class="fa fa-address-card"></span>
+                            </span>
+                        </div>
+                        {{form.address}}
+                    </div>
+                </div>                
+                <div class="form-group">
+                    <div><span class="text-danger">{{form.message.errors}}</span></div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <span class="fa-solid fa-message"></span>
+                            </span>
+                        </div>
+                        {{form.message}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div><span class="text-danger">{{form.pin_code.errors}}</span></div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <span class="fa fa-address-card"></span>
+                            </span>
+                        </div>
+                        {{form.pin_code}}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block col-2 mx-auto btn-primary btn-md">Order Now</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}{% endblock %}

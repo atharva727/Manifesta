@@ -1,0 +1,28 @@
+{% extends 'includes/base.html' %}
+{%load static %}
+
+{% block title %}Manifesta | Home{% endblock %}
+
+{% block content %}
+<div class="container mt-4 pt-4 bg-light">
+    <h1 class="text-center">About Us</h1>
+    <div class="row bg-light">
+        <div class="col-md-6 py-5">
+            <img class="img-fluid" src="{% static 'images/logo.png' %}" alt="">
+        </div>
+        <div class="col-md-6 p-5 my-5">
+            <p class="h5 font-weight-bold"> Manifesta is all you need when planning for your next event, 
+                whether it is your family function or your corporate event, we will help you
+                in selecting the right vendors in your budget and take your event from 0 to 100.
+                <br><br>
+                Manifesta's aim is to be the only destination when it comes to finding out the 
+                vendors, from caterers to artists to venues. We got them all for you! Selecting 
+                a trustworthy vendor was a problem before Manifesta but now it is just at your 
+                finger tips!
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'includes/base.html' %} {%load static %} {% block title %}Manifesta |
+Home{% endblock %} {% block content %}
+<div class="container col-8">
+  <div class="shadow-lg p-3 rounded bg-white my-5">
+    <table class="table align-middle mb-0 bg-white">
+      <thead class="bg-light">
+        <tr>
+          {% if request.user.is_vendor %}
+          <th>Customer</th>
+          {% else %}
+          <th>Vendor</th>
+          {% endif %}
+
+          <th>Date</th>
+          <th>Status</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="ms-3">
+                {% if request.user.is_vendor %}
+                <p class="fw-bold mb-1">{{order.user.first_name}} {{order.user.last_name}}</p>
+                {% else %}
+                <p class="fw-bold mb-1">{{order.vendor.name}}</p>
+                {% endif %}
+              </div>
+            </div>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">{{order.orderDeliveryTime}}</p>
+          </td>
+          <td>
+            <span class="badge badge-success rounded-pill d-inline"
+              >Active</span
+            >
+          </td>
+          <td>{{order.address}}</td>
+          <td>
+            <button type="button" class="btn btn-link btn-sm btn-rounded">
+              Cancel
+            </button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %} {% block script %}{% endblock %}
