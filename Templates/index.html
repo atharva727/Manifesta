@@ -1,7 +1,7 @@
 {% extends 'includes/base.html' %} 
 {%load static %} 
 
-{% block title %}Manifesta |Home{% endblock %} 
+{% block title %}Manifesta | Home{% endblock %} 
 
 {% block content %}
 
@@ -14,11 +14,10 @@
     {% for vendor in category.vendorprofile_set.all %}
     <a href="{% url 'vendorPage' vendor.id %}">
     <div class="col-12 col-sm-6 col-lg-3">
-      <div
-        class="single_advisor_profile wow fadeInUp"
+      <div class="single_advisor_profile wow fadeInUp"
         data-wow-delay="0.2s"
         style="visibility: visible;animation-delay: 0.2s;animation-name: fadeInUp;">
-
+        <a href="{% url 'vendorPage' vendor.id %}">
         <div class="advisor_thumb">
           <img
             src="{{vendor.profile_image.url}}"
@@ -31,7 +30,7 @@
             ><a href="#"><i class="fa fa-linkedin"></i></a>
           </div>
         </div>
-        
+      </a>
         <div class="single_advisor_details_info text-center">
           <h4 class="font-weight-bold">{{vendor.name}}</h4>
           <p class="designation">{{vendor.price}} Rs</p>

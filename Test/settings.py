@@ -12,17 +12,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^f%o*h_+5gktzuyrorti7r3x^n(ny6wzh)t+vodkb5#7u*0+m@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['manifesta-webapp.azurewebsites.net',]
+CSRF_TRUSTED_ORIGINS = ['https://manifesta-webapp.azurewebsites.net/',]
 
 # Application definition
 
 INSTALLED_APPS = [
     'accounts',
     'shop',
-
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -101,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/kolkata'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -114,14 +114,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "media"),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
-STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'  
+STATIC_ROOT = 'home/django/manifesta/static/'
 
 # Media Files
-MEDIA_ROOT =  os.path.join(BASE_DIR, "media")
+MEDIA_ROOT =  os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 # URLS
