@@ -14,8 +14,8 @@ SECRET_KEY = 'django-insecure-^f%o*h_+5gktzuyrorti7r3x^n(ny6wzh)t+vodkb5#7u*0+m@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['manifesta-webapp.azurewebsites.net',]
-CSRF_TRUSTED_ORIGINS = ['https://manifesta-webapp.azurewebsites.net/',]
+ALLOWED_HOSTS = ['manifesta.azurewebsites.net',]
+CSRF_TRUSTED_ORIGINS = ['https://manifesta.azurewebsites.net/',]
 
 # Application definition
 
