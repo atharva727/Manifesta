@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'manifesta'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8C9135205016414B9839703D46A74165 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6D87AC04A92B432A99FC28A9BF80FE8C }}
