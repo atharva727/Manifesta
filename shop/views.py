@@ -174,9 +174,6 @@ class checkoutView(View):
                                        message=message, address=address, pin_code=pin_code)
         return redirect("orders")
 
-        context = {'form': form}
-        return render(request, "checkout.html", context)
-
 
 class ordersPageView(View):
     def get(self, request):
@@ -185,7 +182,3 @@ class ordersPageView(View):
             "orders":orders,
         }
         return render(request, "ordersPage.html",context)
-
-class Chatbot(View):
-    def get(self, request):        
-        return render(request, "chatbot.html")

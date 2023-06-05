@@ -14,8 +14,8 @@ SECRET_KEY = 'django-insecure-^f%o*h_+5gktzuyrorti7r3x^n(ny6wzh)t+vodkb5#7u*0+m@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['manifesta.azurewebsites.net',]
-CSRF_TRUSTED_ORIGINS = ['https://manifesta.azurewebsites.net/',]
+# ALLOWED_HOSTS = ['manifesta.azurewebsites.net',]
+# CSRF_TRUSTED_ORIGINS = ['https://manifesta.azurewebsites.net/',]
 
 # Application definition
 
@@ -34,7 +34,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -63,7 +63,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Test.wsgi.application'
+# WSGI_APPLICATION = 'Test.wsgi.application'
 
 
 # Database
@@ -117,7 +117,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "media"),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'  
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'  
 STATIC_ROOT = 'home/django/manifesta/static/'
 
 # Media Files

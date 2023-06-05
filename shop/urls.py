@@ -12,6 +12,5 @@ urlpatterns = [
     path('vendor/<int:id>/', VendorPageView.as_view(), name="vendorPage"),
     path('aboutUs/', AboutUsView.as_view(), name="aboutUs"),
     path('orders/', ordersPageView.as_view(), name="orders"),
-    path('checkout/<int:id>/', checkoutView.as_view(), name="checkout"),
-    path('chatbot/', Chatbot.as_view(), name="chatbot"),
+    path('checkout/<int:id>/', checkoutView.as_view(), name="checkout")
 ]
